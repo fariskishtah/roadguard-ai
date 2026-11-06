@@ -18,6 +18,14 @@ from roadguard.inference.report import create_pdf_report
 
 PROJECT_ROOT = Path(__file__).resolve().parent
 DEFAULT_WEIGHTS = PROJECT_ROOT / "models" / "roadguard-production.pt"
+EXAMPLE_IMAGES = [
+    PROJECT_ROOT / "examples" / "d00-longitudinal-crack.jpg",
+    PROJECT_ROOT / "examples" / "d10-transverse-crack.jpg",
+    PROJECT_ROOT / "examples" / "d20-alligator-crack.jpg",
+    PROJECT_ROOT / "examples" / "d40-pothole.jpg",
+    PROJECT_ROOT / "examples" / "mixed-damage.jpg",
+    PROJECT_ROOT / "examples" / "no-annotated-damage.jpg",
+]
 
 
 @lru_cache(maxsize=1)
@@ -141,15 +149,37 @@ def build_app() -> gr.Blocks:
                     with gr.Column(scale=1):
                         source = gr.Image(type="pil", label="Road image")
                         confidence = gr.Slider(
-                            0.05, 0.95, value=0.25, step=0.05, label="Confidence threshold"
+                            0.05,
+                            0.95,
+                            value=0.25,
+                            step=0.05,
+                            label="Confidence threshold",
+                            info=(
+                                "Lower values return more candidates and usually more false "
+                                "alarms."
+                            ),
                         )
                         nms_iou = gr.Slider(
-                            0.1, 0.9, value=0.45, step=0.05, label="NMS IoU threshold"
+                            0.1,
+                            0.9,
+                            value=0.45,
+                            step=0.05,
+                            label="NMS IoU threshold",
+                            info=(
+                                "Controls suppression of overlapping predictions; it is not "
+                                "measured localization IoU."
+                            ),
                         )
                         run = gr.Button("Run road inspection", variant="primary")
                     with gr.Column(scale=1):
                         annotated = gr.Image(type="pil", label="Annotated result")
                         summary = gr.Markdown("Upload an image to begin.")
+                gr.Examples(
+                    examples=[[str(path)] for path in EXAMPLE_IMAGES],
+                    inputs=[source],
+                    label="RDD2022 examples — select one, then run inspection",
+                    cache_examples=False,
+                )
                 table = gr.Dataframe(label="Detections", interactive=False)
                 with gr.Row():
                     json_file = gr.File(label="JSON")
