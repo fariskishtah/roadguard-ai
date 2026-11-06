@@ -141,7 +141,10 @@ def analyse(
         )
     true_positives = len(matched_ious)
     payload = {
-        "scope": "representative 24-image sample; not the frozen test-set evaluator",
+        "scope": (
+            "representative 24-image sample drawn from the frozen held-out test split; "
+            "not the full test-set evaluator"
+        ),
         "weights": str(weights),
         "images_evaluated": len(image_paths),
         "confidence_threshold": confidence,

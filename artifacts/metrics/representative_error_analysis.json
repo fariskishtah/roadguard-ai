@@ -1,5 +1,5 @@
 {
-  "scope": "representative 24-image sample; not the frozen test-set evaluator",
+  "scope": "representative 24-image sample drawn from the frozen held-out test split; not the full test-set evaluator",
   "weights": "artifacts/kaggle-v6/roadguard-output/roadguard-production.pt",
   "images_evaluated": 24,
   "confidence_threshold": 0.25,
