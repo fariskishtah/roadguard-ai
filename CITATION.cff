@@ -1,0 +1,32 @@
+cff-version: 1.2.0
+message: "If you use RoadGuard AI, cite this repository and the RDD2022 dataset paper."
+title: "RoadGuard AI"
+type: software
+authors:
+  - family-names: Kishtah
+    given-names: Faris Mohamed
+repository-code: "https://github.com/fariskishtah/roadguard-ai"
+license: AGPL-3.0-only
+version: 0.1.0
+date-released: 2026-11-06
+references:
+  - type: article
+    title: "RDD2022: A multi-national image dataset for automatic road damage detection"
+    authors:
+      - family-names: Arya
+        given-names: Deeksha
+      - family-names: Maeda
+        given-names: Hiroya
+      - family-names: Ghosh
+        given-names: Sanjay Kumar
+      - family-names: Toshniwal
+        given-names: Durga
+      - family-names: Sekimoto
+        given-names: Yoshihide
+    journal: Geoscience Data Journal
+    volume: 11
+    issue: 4
+    start: 846
+    end: 862
+    year: 2024
+
