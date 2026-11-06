@@ -62,11 +62,13 @@ if torch.cuda.is_available():
 
 
 def locate_input_root() -> Path:
-    candidates = [
-        path.parent
-        for path in INPUT_BASE.rglob("data.yaml")
-        if (path.parent / "train" / "images").is_dir()
-    ]
+    patterns = (
+        "*/data.yaml",
+        "datasets/*/*/data.yaml",
+        "datasets/*/*/versions/*/data.yaml",
+    )
+    yaml_paths = [path for pattern in patterns for path in INPUT_BASE.glob(pattern)]
+    candidates = [path.parent for path in yaml_paths if (path.parent / "train" / "images").is_dir()]
     if not candidates:
         inventory = [str(path) for path in INPUT_BASE.iterdir()] if INPUT_BASE.exists() else []
         raise FileNotFoundError(
@@ -127,9 +129,6 @@ def parse_label(path: Path) -> tuple[list[tuple[int, float, float, float, float]
 def discover_records(input_root: Path) -> tuple[list[dict], dict]:
     records = []
     full_counts = Counter()
-    full_classes = Counter()
-    empty = 0
-    invalid = []
     # The mirror's test folder mixes a labeled holdout with the official 6,000-image
     # unannotated challenge test set. Restrict discovery to its train+val transport
     # folders, then construct a new independent train/val/test split below.
@@ -142,22 +141,14 @@ def discover_records(input_root: Path) -> tuple[list[dict], dict]:
             if image_path.suffix.lower() not in {".jpg", ".jpeg", ".png"}:
                 continue
             label_path = label_dir / f"{image_path.stem}.txt"
-            # RDD2022 challenge-test images have no public annotations.
-            if not label_path.exists():
-                continue
-            boxes, errors = parse_label(label_path)
-            invalid.extend(errors)
             country = country_from_stem(image_path.stem)
             full_counts[country] += 1
-            full_classes.update(box[0] for box in boxes)
-            empty += int(not boxes)
             records.append(
                 {
                     "country": country,
                     "stem": image_path.stem,
                     "image": image_path,
                     "label": label_path,
-                    "boxes": boxes,
                     "group": sequence_group(country, image_path.stem),
                     "source_split": source_split,
                 }
@@ -165,11 +156,12 @@ def discover_records(input_root: Path) -> tuple[list[dict], dict]:
     audit = {
         "transport_mirror": "sreekaraditya/rdd2022-yolo-crackscan-v2",
         "mounted_input_root": str(input_root),
-        "labeled_images_discovered": len(records),
-        "images_by_country": dict(full_counts),
-        "annotations_by_class_id": {str(k): v for k, v in full_classes.items()},
-        "empty_label_images": empty,
-        "invalid_label_entries": invalid,
+        "annotated_transport_image_inventory": len(records),
+        "transport_images_by_country": dict(full_counts),
+        "audit_scope": (
+            "Image inventory for transport train+val; complete label, box, resolution, and hash "
+            "audit for the actual selected training subset."
+        ),
         "transport_test_excluded": True,
         "transport_test_exclusion_reason": (
             "It mixes public labeled data with the official unannotated challenge test set."
@@ -218,10 +210,26 @@ def prepare_dataset(selected: list[dict], audit: dict) -> Path:
     image_hashes = defaultdict(list)
     hash_source_groups = defaultdict(list)
     resolution_counts = Counter()
-    for record in selected:
+    selected_invalid = []
+    selected_empty = 0
+    for selected_index, record in enumerate(selected, start=1):
+        if not record["label"].exists():
+            selected_invalid.append(f"{record['label']}:missing")
+            record["boxes"] = []
+        else:
+            record["boxes"], errors = parse_label(record["label"])
+            selected_invalid.extend(errors)
+        selected_empty += int(not record["boxes"])
+        class_counts.update(box[0] for box in record["boxes"])
         record["sha256"] = sha256_file(record["image"])
         image_hashes[record["sha256"]].append(f"{record['country']}__{record['stem']}")
         hash_source_groups[record["sha256"]].append(record["group"])
+        if selected_index % 500 == 0:
+            print(f"Audited {selected_index}/{len(selected)} selected images", flush=True)
+    audit["invalid_label_entries"] = selected_invalid
+    audit["empty_label_images"] = selected_empty
+    if selected_invalid:
+        raise RuntimeError(f"Invalid selected labels found: {selected_invalid[:10]}")
     # Exact duplicates inherit one common grouping key before split assignment.
     hash_group_leaders = {digest: min(groups) for digest, groups in hash_source_groups.items()}
     for record in selected:
@@ -240,7 +248,6 @@ def prepare_dataset(selected: list[dict], audit: dict) -> Path:
             resolution_counts[f"{image.width}x{image.height}"] += 1
         split_counts[split] += 1
         country_split_counts[f"{record['country']}|{split}"] += 1
-        class_counts.update(box[0] for box in record["boxes"])
         manifest["records"].append(
             {
                 "sample_id": unique_stem,
@@ -434,12 +441,13 @@ def main() -> None:
     for path in (WORK_ROOT, DATA_ROOT, RUNS_ROOT, ARTIFACTS_ROOT, OUTPUT_ROOT):
         path.mkdir(parents=True, exist_ok=True)
     input_root = locate_input_root()
+    print(f"Using mounted dataset at {input_root}", flush=True)
     records, audit = discover_records(input_root)
+    print(f"Discovered {len(records)} annotated transport images", flush=True)
     if len(records) < 30000:
         raise RuntimeError(f"Expected at least 30,000 labeled images, found {len(records)}")
-    if audit["invalid_label_entries"]:
-        raise RuntimeError(f"Invalid labels found: {audit['invalid_label_entries'][:10]}")
     selected = select_subset(records)
+    print(f"Selected {len(selected)} country-balanced images", flush=True)
     data_yaml = prepare_dataset(selected, audit)
     environment = {
         "python": sys.version,
@@ -583,12 +591,21 @@ def main() -> None:
     (ARTIFACTS_ROOT / "production_selection.json").write_text(json.dumps(selection, indent=2))
     shutil.copytree(ARTIFACTS_ROOT, OUTPUT_ROOT / "metrics", dirs_exist_ok=True)
 
-    onnx_path = Path(
-        YOLO(str(production_target)).export(
-            format="onnx", imgsz=IMG_SIZE, simplify=True, dynamic=False, device=0
+    try:
+        onnx_path = Path(
+            YOLO(str(production_target)).export(
+                format="onnx", imgsz=IMG_SIZE, simplify=True, dynamic=False, device=0
+            )
         )
+        shutil.copy2(onnx_path, OUTPUT_ROOT / "roadguard-production.onnx")
+        export_status = {"status": "complete", "onnx_path": str(onnx_path)}
+    except Exception as exc:  # Export must not erase successful training/evaluation artifacts.
+        export_status = {"status": "failed", "error": repr(exc)}
+    (ARTIFACTS_ROOT / "onnx_export_status.json").write_text(json.dumps(export_status, indent=2))
+    shutil.copy2(
+        ARTIFACTS_ROOT / "onnx_export_status.json",
+        OUTPUT_ROOT / "metrics" / "onnx_export_status.json",
     )
-    shutil.copy2(onnx_path, OUTPUT_ROOT / "roadguard-production.onnx")
     print(
         json.dumps(
             {"status": "complete", "selection": selection, "comparison": comparison}, indent=2

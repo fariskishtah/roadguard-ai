@@ -40,7 +40,10 @@ Status: **PARTIAL — implementation and real experiments in progress**
 - Version 3: recursive input discovery added before any training.
 - Version 4: metric parameter counting corrected to use the loaded YOLO model object.
 - Version 5: per-class metrics corrected to use Ultralytics `class_result()` API.
-- Version 5 is prepared locally but was not submitted yet because two GPU sessions are active; Kaggle rejected a third concurrent session.
+- Versions 3 and 4 were explicitly cancelled by their exact Kaggle session IDs after confirming they were stuck traversing the nested input mount and would later hit the known metric API error. No useful training artifacts existed.
+- Version 5 uses bounded input glob patterns and makes ONNX export non-fatal to preserve successful training/evaluation evidence.
+- Version 5 status: explicitly cancelled after confirming full-mirror small-file label I/O was consuming GPU without reaching smoke training.
+- Version 6 audits every label, box, resolution, and hash in the actual 6,000-image subset while retaining inventory counts for the larger transport folders.
 
 ## Not yet complete
 
