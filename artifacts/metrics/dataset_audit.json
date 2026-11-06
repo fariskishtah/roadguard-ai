@@ -1,0 +1,66 @@
+{
+  "transport_mirror": "sreekaraditya/rdd2022-yolo-crackscan-v2",
+  "mounted_input_root": "/kaggle/input/datasets/sreekaraditya/rdd2022-yolo-crackscan-v2",
+  "annotated_transport_image_inventory": 38385,
+  "transport_images_by_country": {
+    "China": 4378,
+    "Czech": 2829,
+    "India": 7706,
+    "Japan": 10506,
+    "Norway": 8161,
+    "United_States": 4805
+  },
+  "audit_scope": "Image inventory for transport train+val; complete label, box, resolution, and hash audit for the actual selected training subset.",
+  "transport_test_excluded": true,
+  "transport_test_exclusion_reason": "It mixes public labeled data with the official unannotated challenge test set.",
+  "invalid_label_entries": [],
+  "empty_label_images": 2205,
+  "selected_images": 6000,
+  "selected_annotations_by_class_id": {
+    "1": 1970,
+    "0": 4124,
+    "2": 1409,
+    "3": 931
+  },
+  "split_counts": {
+    "train": 4322,
+    "val": 882,
+    "test": 796
+  },
+  "country_split_counts": {
+    "China|train": 720,
+    "China|val": 137,
+    "China|test": 143,
+    "Czech|test": 99,
+    "Czech|train": 707,
+    "Czech|val": 194,
+    "India|train": 732,
+    "India|val": 128,
+    "India|test": 140,
+    "Japan|train": 707,
+    "Japan|test": 146,
+    "Japan|val": 147,
+    "Norway|train": 715,
+    "Norway|test": 135,
+    "Norway|val": 150,
+    "United_States|train": 741,
+    "United_States|test": 133,
+    "United_States|val": 126
+  },
+  "resolution_counts": {
+    "512x512": 1000,
+    "600x600": 1977,
+    "720x720": 1000,
+    "1024x1024": 10,
+    "540x540": 12,
+    "1080x1080": 1,
+    "4040x2035": 532,
+    "3643x2041": 344,
+    "3650x2044": 124,
+    "640x640": 1000
+  },
+  "exact_duplicate_groups": [],
+  "exact_duplicate_split_leakage": [],
+  "geographic_independence_claimed": false,
+  "leakage_note": "Adjacent numeric frames are grouped and exact hashes audited. Route/location IDs are unavailable, so complete geographic independence is not claimed."
+}

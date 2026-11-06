@@ -1,0 +1,16 @@
+{
+  "id": "fariskishtah/roadguard-ai-controlled-tuning",
+  "title": "RoadGuard AI — Controlled Hyperparameter Tuning",
+  "code_file": "roadguard_tuning.py",
+  "language": "python",
+  "kernel_type": "script",
+  "is_private": "true",
+  "enable_gpu": "true",
+  "enable_tpu": "false",
+  "enable_internet": "true",
+  "machine_shape": "",
+  "dataset_sources": ["sreekaraditya/rdd2022-yolo-crackscan-v2"],
+  "competition_sources": [],
+  "kernel_sources": [],
+  "model_sources": []
+}

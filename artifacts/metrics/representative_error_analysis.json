@@ -1,0 +1,263 @@
+{
+  "scope": "representative 24-image sample; not the frozen test-set evaluator",
+  "weights": "artifacts/kaggle-v6/roadguard-output/roadguard-production.pt",
+  "images_evaluated": 24,
+  "confidence_threshold": 0.25,
+  "match_iou_threshold": 0.5,
+  "ground_truth_instances": 42,
+  "predicted_instances": 20,
+  "true_positives": 11,
+  "false_positives": 9,
+  "false_negatives": 31,
+  "sample_precision": 0.55,
+  "sample_recall": 0.2619047619047619,
+  "mean_matched_iou": 0.7210519616833598,
+  "per_class": [
+    {
+      "class_id": 0,
+      "class_code": "D00",
+      "class_name": "Longitudinal Crack",
+      "ground_truth_instances": 25,
+      "matched_instances": 4
+    },
+    {
+      "class_id": 1,
+      "class_code": "D10",
+      "class_name": "Transverse Crack",
+      "ground_truth_instances": 13,
+      "matched_instances": 7
+    },
+    {
+      "class_id": 2,
+      "class_code": "D20",
+      "class_name": "Alligator Crack",
+      "ground_truth_instances": 3,
+      "matched_instances": 0
+    },
+    {
+      "class_id": 3,
+      "class_code": "D40",
+      "class_name": "Pothole",
+      "ground_truth_instances": 1,
+      "matched_instances": 0
+    }
+  ],
+  "images": [
+    {
+      "image": "train/images/China_Drone_000162.jpg",
+      "ground_truth": 1,
+      "predictions": 0,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "train/images/China_Drone_000166.jpg",
+      "ground_truth": 3,
+      "predictions": 2,
+      "true_positives_at_iou_0_5": 2,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "matched_mean_iou": 0.6216482463816915
+    },
+    {
+      "image": "train/images/China_Drone_000192.jpg",
+      "ground_truth": 1,
+      "predictions": 0,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "train/images/China_Drone_000193.jpg",
+      "ground_truth": 0,
+      "predictions": 0,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "train/images/Czech_000001.jpg",
+      "ground_truth": 0,
+      "predictions": 0,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "train/images/Czech_000007.jpg",
+      "ground_truth": 0,
+      "predictions": 2,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 2,
+      "false_negatives": 0,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "train/images/Czech_000009.jpg",
+      "ground_truth": 0,
+      "predictions": 0,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "train/images/India_000103.jpg",
+      "ground_truth": 1,
+      "predictions": 0,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "train/images/India_000107.jpg",
+      "ground_truth": 0,
+      "predictions": 0,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "train/images/India_000156.jpg",
+      "ground_truth": 0,
+      "predictions": 0,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "train/images/India_000169.jpg",
+      "ground_truth": 0,
+      "predictions": 0,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "train/images/Japan_000100.jpg",
+      "ground_truth": 3,
+      "predictions": 1,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 1,
+      "false_negatives": 3,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "train/images/Japan_000104.jpg",
+      "ground_truth": 1,
+      "predictions": 1,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 1,
+      "false_negatives": 1,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "train/images/Japan_000154.jpg",
+      "ground_truth": 3,
+      "predictions": 3,
+      "true_positives_at_iou_0_5": 1,
+      "false_positives": 2,
+      "false_negatives": 2,
+      "matched_mean_iou": 0.6443863082913703
+    },
+    {
+      "image": "train/images/Japan_000215.jpg",
+      "ground_truth": 3,
+      "predictions": 2,
+      "true_positives_at_iou_0_5": 2,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "matched_mean_iou": 0.7345395840141056
+    },
+    {
+      "image": "train/images/Norway_000160.jpg",
+      "ground_truth": 0,
+      "predictions": 0,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "train/images/Norway_000165.jpg",
+      "ground_truth": 13,
+      "predictions": 0,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 0,
+      "false_negatives": 13,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "train/images/United_States_000025.jpg",
+      "ground_truth": 3,
+      "predictions": 1,
+      "true_positives_at_iou_0_5": 1,
+      "false_positives": 0,
+      "false_negatives": 2,
+      "matched_mean_iou": 0.8879187722054147
+    },
+    {
+      "image": "train/images/United_States_000028.jpg",
+      "ground_truth": 2,
+      "predictions": 1,
+      "true_positives_at_iou_0_5": 1,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "matched_mean_iou": 0.6364491722448277
+    },
+    {
+      "image": "train/images/United_States_000097.jpg",
+      "ground_truth": 4,
+      "predictions": 4,
+      "true_positives_at_iou_0_5": 2,
+      "false_positives": 2,
+      "false_negatives": 2,
+      "matched_mean_iou": 0.7674711523284559
+    },
+    {
+      "image": "val/images/Czech_000006.jpg",
+      "ground_truth": 1,
+      "predictions": 0,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 0,
+      "false_negatives": 1,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "val/images/Norway_000166.jpg",
+      "ground_truth": 0,
+      "predictions": 0,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "val/images/Norway_000187.jpg",
+      "ground_truth": 0,
+      "predictions": 0,
+      "true_positives_at_iou_0_5": 0,
+      "false_positives": 0,
+      "false_negatives": 0,
+      "matched_mean_iou": null
+    },
+    {
+      "image": "val/images/United_States_000022.jpg",
+      "ground_truth": 3,
+      "predictions": 3,
+      "true_positives_at_iou_0_5": 2,
+      "false_positives": 1,
+      "false_negatives": 1,
+      "matched_mean_iou": 0.7577496801634198
+    }
+  ]
+}

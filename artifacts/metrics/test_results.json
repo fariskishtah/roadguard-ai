@@ -1,0 +1,218 @@
+[
+  {
+    "weights": "/kaggle/working/roadguard/runs/final_yolov8n/weights/best.pt",
+    "split": "test",
+    "precision": 0.48501027993690043,
+    "recall": 0.35125898856460663,
+    "map50": 0.360186690232575,
+    "map50_95": 0.16539409504785524,
+    "per_class": [
+      {
+        "class_id": 0,
+        "class_code": "D00",
+        "class_name": "Longitudinal Crack",
+        "precision": 0.49566829972943965,
+        "recall": 0.4134948096885813,
+        "ap50": 0.4157699556955448,
+        "ap50_95": 0.19869203500374596
+      },
+      {
+        "class_id": 1,
+        "class_code": "D10",
+        "class_name": "Transverse Crack",
+        "precision": 0.5136979588582311,
+        "recall": 0.3860294117647059,
+        "ap50": 0.38531921036168376,
+        "ap50_95": 0.17418236117523897
+      },
+      {
+        "class_id": 2,
+        "class_code": "D20",
+        "class_name": "Alligator Crack",
+        "precision": 0.5232774443940525,
+        "recall": 0.44642082371423025,
+        "ap50": 0.45518422629857536,
+        "ap50_95": 0.207568005567349
+      },
+      {
+        "class_id": 3,
+        "class_code": "D40",
+        "class_name": "Pothole",
+        "precision": 0.4073974167658785,
+        "recall": 0.1590909090909091,
+        "ap50": 0.18447336857449603,
+        "ap50_95": 0.08113397844508694
+      }
+    ],
+    "speed_ms": {
+      "preprocess": 0.867836358033467,
+      "inference": 4.501637819089982,
+      "loss": 0.0007729535201777517,
+      "postprocess": 1.1706208605546498
+    },
+    "parameters": 3138732,
+    "size_mb": 6.202798843383789,
+    "model": "yolov8n.pt",
+    "benchmark": {
+      "device": "Tesla T4",
+      "image_size": 640,
+      "batch_size": 1,
+      "warmup": 5,
+      "repetitions": 50,
+      "model_only": {
+        "median_ms": 10.255046499878517,
+        "p95_ms": 16.119562999847403,
+        "fps": 97.51296593456169
+      },
+      "end_to_end": {
+        "median_ms": 10.264946999996027,
+        "p95_ms": 16.130387999510276,
+        "fps": 97.41891507090948
+      }
+    }
+  },
+  {
+    "weights": "/kaggle/working/roadguard/runs/final_yolo11n/weights/best.pt",
+    "split": "test",
+    "precision": 0.5027174739316657,
+    "recall": 0.3808750579460605,
+    "map50": 0.3736692241912038,
+    "map50_95": 0.16468310222428345,
+    "per_class": [
+      {
+        "class_id": 0,
+        "class_code": "D00",
+        "class_name": "Longitudinal Crack",
+        "precision": 0.46606412363627053,
+        "recall": 0.4359861591695502,
+        "ap50": 0.4015571883258232,
+        "ap50_95": 0.19134701028362147
+      },
+      {
+        "class_id": 1,
+        "class_code": "D10",
+        "class_name": "Transverse Crack",
+        "precision": 0.5030176727057062,
+        "recall": 0.40808823529411764,
+        "ap50": 0.39832023041761877,
+        "ap50_95": 0.1715672848484922
+      },
+      {
+        "class_id": 2,
+        "class_code": "D20",
+        "class_name": "Alligator Crack",
+        "precision": 0.5517174450345929,
+        "recall": 0.49760765550239233,
+        "ap50": 0.47626075162235665,
+        "ap50_95": 0.2125101095370982
+      },
+      {
+        "class_id": 3,
+        "class_code": "D40",
+        "class_name": "Pothole",
+        "precision": 0.49007065435009284,
+        "recall": 0.18181818181818182,
+        "ap50": 0.2185387263990166,
+        "ap50_95": 0.0833080042279219
+      }
+    ],
+    "speed_ms": {
+      "preprocess": 0.9171652412046409,
+      "inference": 4.416741635677956,
+      "loss": 0.0007874007486811682,
+      "postprocess": 1.12380767965037
+    },
+    "parameters": 2605612,
+    "size_mb": 5.248559951782227,
+    "model": "yolo11n.pt",
+    "benchmark": {
+      "device": "Tesla T4",
+      "image_size": 640,
+      "batch_size": 1,
+      "warmup": 5,
+      "repetitions": 50,
+      "model_only": {
+        "median_ms": 11.687047999657807,
+        "p95_ms": 15.555119000055129,
+        "fps": 85.56480644464536
+      },
+      "end_to_end": {
+        "median_ms": 11.697639000431082,
+        "p95_ms": 15.572969999993802,
+        "fps": 85.4873363730192
+      }
+    }
+  },
+  {
+    "weights": "/kaggle/working/roadguard/runs/final_yolo26n/weights/best.pt",
+    "split": "test",
+    "precision": 0.47006401184892865,
+    "recall": 0.42237883754683975,
+    "map50": 0.4022198314846656,
+    "map50_95": 0.1923726544358673,
+    "per_class": [
+      {
+        "class_id": 0,
+        "class_code": "D00",
+        "class_name": "Longitudinal Crack",
+        "precision": 0.5146811780110312,
+        "recall": 0.5207612456747405,
+        "ap50": 0.462388114128633,
+        "ap50_95": 0.2313738664935435
+      },
+      {
+        "class_id": 1,
+        "class_code": "D10",
+        "class_name": "Transverse Crack",
+        "precision": 0.46638953652979154,
+        "recall": 0.47058823529411764,
+        "ap50": 0.43440480728655756,
+        "ap50_95": 0.19439134819704298
+      },
+      {
+        "class_id": 2,
+        "class_code": "D20",
+        "class_name": "Alligator Crack",
+        "precision": 0.5234219436137044,
+        "recall": 0.4784688995215311,
+        "ap50": 0.4959650224494587,
+        "ap50_95": 0.2576700056765907
+      },
+      {
+        "class_id": 3,
+        "class_code": "D40",
+        "class_name": "Pothole",
+        "precision": 0.3757633892411874,
+        "recall": 0.2196969696969697,
+        "ap50": 0.21612138207401316,
+        "ap50_95": 0.08605539737629195
+      }
+    ],
+    "speed_ms": {
+      "preprocess": 0.89693327260908,
+      "inference": 4.532830418342904,
+      "loss": 0.0007375251275494411,
+      "postprocess": 1.074201204773862
+    },
+    "parameters": 2535344,
+    "size_mb": 5.199040412902832,
+    "model": "yolo26n.pt",
+    "benchmark": {
+      "device": "Tesla T4",
+      "image_size": 640,
+      "batch_size": 1,
+      "warmup": 5,
+      "repetitions": 50,
+      "model_only": {
+        "median_ms": 12.605377500221948,
+        "p95_ms": 14.211484999577806,
+        "fps": 79.33122193146477
+      },
+      "end_to_end": {
+        "median_ms": 12.615204499979882,
+        "p95_ms": 14.222160999452171,
+        "fps": 79.26942444742728
+      }
+    }
+  }
+]

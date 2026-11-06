@@ -1,0 +1,188 @@
+[
+  {
+    "experiment_id": "yolo11n-lr-0.003",
+    "learning_rate": 0.003,
+    "epochs": 5,
+    "fraction": 0.35,
+    "duration_seconds": 102.78978788500012,
+    "checkpoint": "/kaggle/working/roadguard/runs/tune_yolo11n_lr_0_003/weights/best.pt",
+    "validation": {
+      "weights": "/kaggle/working/roadguard/runs/tune_yolo11n_lr_0_003/weights/best.pt",
+      "split": "val",
+      "precision": 0.17025843320941042,
+      "recall": 0.20452497682627435,
+      "map50": 0.10516096087972492,
+      "map50_95": 0.03515513028718191,
+      "per_class": [
+        {
+          "class_id": 0,
+          "class_code": "D00",
+          "class_name": "Longitudinal Crack",
+          "precision": 0.23095631241436415,
+          "recall": 0.30393996247654786,
+          "ap50": 0.14791518569660464,
+          "ap50_95": 0.05745386001231485
+        },
+        {
+          "class_id": 1,
+          "class_code": "D10",
+          "class_name": "Transverse Crack",
+          "precision": 0.22421279363090185,
+          "recall": 0.2326388888888889,
+          "ap50": 0.13075419490710086,
+          "ap50_95": 0.03999763858311474
+        },
+        {
+          "class_id": 2,
+          "class_code": "D20",
+          "class_name": "Alligator Crack",
+          "precision": 0.1353482492369636,
+          "recall": 0.21395348837209302,
+          "ap50": 0.1143850231585302,
+          "ap50_95": 0.03560163330126377
+        },
+        {
+          "class_id": 3,
+          "class_code": "D40",
+          "class_name": "Pothole",
+          "precision": 0.09051637755541203,
+          "recall": 0.06756756756756757,
+          "ap50": 0.027589439756663933,
+          "ap50_95": 0.007567389252034281
+        }
+      ],
+      "speed_ms": {
+        "preprocess": 0.859577164399426,
+        "inference": 4.595469463720137,
+        "loss": 0.0008049195021529306,
+        "postprocess": 1.4354795283442607
+      },
+      "parameters": 2605612,
+      "size_mb": 5.228479385375977
+    }
+  },
+  {
+    "experiment_id": "yolo11n-lr-0.01",
+    "learning_rate": 0.01,
+    "epochs": 5,
+    "fraction": 0.35,
+    "duration_seconds": 97.45996763400012,
+    "checkpoint": "/kaggle/working/roadguard/runs/tune_yolo11n_lr_0_01/weights/best.pt",
+    "validation": {
+      "weights": "/kaggle/working/roadguard/runs/tune_yolo11n_lr_0_01/weights/best.pt",
+      "split": "val",
+      "precision": 0.17025843320941042,
+      "recall": 0.20452497682627435,
+      "map50": 0.10516096087972492,
+      "map50_95": 0.03515513028718191,
+      "per_class": [
+        {
+          "class_id": 0,
+          "class_code": "D00",
+          "class_name": "Longitudinal Crack",
+          "precision": 0.23095631241436415,
+          "recall": 0.30393996247654786,
+          "ap50": 0.14791518569660464,
+          "ap50_95": 0.05745386001231485
+        },
+        {
+          "class_id": 1,
+          "class_code": "D10",
+          "class_name": "Transverse Crack",
+          "precision": 0.22421279363090185,
+          "recall": 0.2326388888888889,
+          "ap50": 0.13075419490710086,
+          "ap50_95": 0.03999763858311474
+        },
+        {
+          "class_id": 2,
+          "class_code": "D20",
+          "class_name": "Alligator Crack",
+          "precision": 0.1353482492369636,
+          "recall": 0.21395348837209302,
+          "ap50": 0.1143850231585302,
+          "ap50_95": 0.03560163330126377
+        },
+        {
+          "class_id": 3,
+          "class_code": "D40",
+          "class_name": "Pothole",
+          "precision": 0.09051637755541203,
+          "recall": 0.06756756756756757,
+          "ap50": 0.027589439756663933,
+          "ap50_95": 0.007567389252034281
+        }
+      ],
+      "speed_ms": {
+        "preprocess": 0.8752999319713559,
+        "inference": 4.238329591836839,
+        "loss": 0.0006887267564684459,
+        "postprocess": 1.289875281178985
+      },
+      "parameters": 2605612,
+      "size_mb": 5.228479385375977
+    }
+  },
+  {
+    "experiment_id": "yolo11n-lr-0.02",
+    "learning_rate": 0.02,
+    "epochs": 5,
+    "fraction": 0.35,
+    "duration_seconds": 97.95636671600005,
+    "checkpoint": "/kaggle/working/roadguard/runs/tune_yolo11n_lr_0_02/weights/best.pt",
+    "validation": {
+      "weights": "/kaggle/working/roadguard/runs/tune_yolo11n_lr_0_02/weights/best.pt",
+      "split": "val",
+      "precision": 0.17025843320941042,
+      "recall": 0.20452497682627435,
+      "map50": 0.10516096087972492,
+      "map50_95": 0.03515513028718191,
+      "per_class": [
+        {
+          "class_id": 0,
+          "class_code": "D00",
+          "class_name": "Longitudinal Crack",
+          "precision": 0.23095631241436415,
+          "recall": 0.30393996247654786,
+          "ap50": 0.14791518569660464,
+          "ap50_95": 0.05745386001231485
+        },
+        {
+          "class_id": 1,
+          "class_code": "D10",
+          "class_name": "Transverse Crack",
+          "precision": 0.22421279363090185,
+          "recall": 0.2326388888888889,
+          "ap50": 0.13075419490710086,
+          "ap50_95": 0.03999763858311474
+        },
+        {
+          "class_id": 2,
+          "class_code": "D20",
+          "class_name": "Alligator Crack",
+          "precision": 0.1353482492369636,
+          "recall": 0.21395348837209302,
+          "ap50": 0.1143850231585302,
+          "ap50_95": 0.03560163330126377
+        },
+        {
+          "class_id": 3,
+          "class_code": "D40",
+          "class_name": "Pothole",
+          "precision": 0.09051637755541203,
+          "recall": 0.06756756756756757,
+          "ap50": 0.027589439756663933,
+          "ap50_95": 0.007567389252034281
+        }
+      ],
+      "speed_ms": {
+        "preprocess": 0.8828205317463997,
+        "inference": 4.296181012471786,
+        "loss": 0.0007409229025646061,
+        "postprocess": 1.22020780725722
+      },
+      "parameters": 2605612,
+      "size_mb": 5.228479385375977
+    }
+  }
+]

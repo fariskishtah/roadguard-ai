@@ -5,10 +5,12 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 .ruff_cache/
+.playwright-cli/
 data/raw/
 data/processed/
 runs/
 outputs/
+output/playwright/
 *.pt
 *.onnx
 *.mp4
@@ -17,6 +19,7 @@ outputs/
 *.zip
 artifacts/reports/
 artifacts/screenshots/
+artifacts/kaggle-*/
 !artifacts/metrics/.gitkeep
 !artifacts/figures/.gitkeep
 

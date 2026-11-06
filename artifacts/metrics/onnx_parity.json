@@ -1,0 +1,296 @@
+{
+  "pytorch_weights": "artifacts/kaggle-v6/roadguard-output/roadguard-production.pt",
+  "exported_weights": "artifacts/kaggle-v6/roadguard-output/roadguard-production.onnx",
+  "images_evaluated": 24,
+  "confidence_threshold": 0.25,
+  "nms_iou_threshold": 0.45,
+  "image_size": 640,
+  "pytorch_detections": 20,
+  "exported_detections": 20,
+  "matched_detections_at_iou_0_5": 20,
+  "reference_match_rate": 1.0,
+  "mean_matched_box_iou": 0.9999990635613031,
+  "mean_absolute_confidence_difference": 5.27501106262207e-07,
+  "median_pytorch_latency_ms": 79.49733349960297,
+  "median_exported_latency_ms": 51.36720849804988,
+  "images": [
+    {
+      "image": "China_Drone_000162.jpg",
+      "pytorch_detections": 0,
+      "exported_detections": 0,
+      "matches_at_iou_0_5": 0,
+      "matches": []
+    },
+    {
+      "image": "China_Drone_000166.jpg",
+      "pytorch_detections": 2,
+      "exported_detections": 2,
+      "matches_at_iou_0_5": 2,
+      "matches": [
+        {
+          "class_id": 0,
+          "iou": 0.9999998256827122,
+          "confidence_difference": 2.9802322387695312e-08
+        },
+        {
+          "class_id": 0,
+          "iou": 0.9999977099721229,
+          "confidence_difference": 3.8743019104003906e-07
+        }
+      ]
+    },
+    {
+      "image": "China_Drone_000192.jpg",
+      "pytorch_detections": 0,
+      "exported_detections": 0,
+      "matches_at_iou_0_5": 0,
+      "matches": []
+    },
+    {
+      "image": "China_Drone_000193.jpg",
+      "pytorch_detections": 0,
+      "exported_detections": 0,
+      "matches_at_iou_0_5": 0,
+      "matches": []
+    },
+    {
+      "image": "Czech_000001.jpg",
+      "pytorch_detections": 0,
+      "exported_detections": 0,
+      "matches_at_iou_0_5": 0,
+      "matches": []
+    },
+    {
+      "image": "Czech_000007.jpg",
+      "pytorch_detections": 2,
+      "exported_detections": 2,
+      "matches_at_iou_0_5": 2,
+      "matches": [
+        {
+          "class_id": 0,
+          "iou": 1.0,
+          "confidence_difference": 1.2218952178955078e-06
+        },
+        {
+          "class_id": 0,
+          "iou": 0.9999986975257548,
+          "confidence_difference": 7.152557373046875e-07
+        }
+      ]
+    },
+    {
+      "image": "Czech_000009.jpg",
+      "pytorch_detections": 0,
+      "exported_detections": 0,
+      "matches_at_iou_0_5": 0,
+      "matches": []
+    },
+    {
+      "image": "India_000103.jpg",
+      "pytorch_detections": 0,
+      "exported_detections": 0,
+      "matches_at_iou_0_5": 0,
+      "matches": []
+    },
+    {
+      "image": "India_000107.jpg",
+      "pytorch_detections": 0,
+      "exported_detections": 0,
+      "matches_at_iou_0_5": 0,
+      "matches": []
+    },
+    {
+      "image": "India_000156.jpg",
+      "pytorch_detections": 0,
+      "exported_detections": 0,
+      "matches_at_iou_0_5": 0,
+      "matches": []
+    },
+    {
+      "image": "India_000169.jpg",
+      "pytorch_detections": 0,
+      "exported_detections": 0,
+      "matches_at_iou_0_5": 0,
+      "matches": []
+    },
+    {
+      "image": "Japan_000100.jpg",
+      "pytorch_detections": 1,
+      "exported_detections": 1,
+      "matches_at_iou_0_5": 1,
+      "matches": [
+        {
+          "class_id": 0,
+          "iou": 0.9999990159525527,
+          "confidence_difference": 1.817941665649414e-06
+        }
+      ]
+    },
+    {
+      "image": "Japan_000104.jpg",
+      "pytorch_detections": 1,
+      "exported_detections": 1,
+      "matches_at_iou_0_5": 1,
+      "matches": [
+        {
+          "class_id": 0,
+          "iou": 0.9999984314410325,
+          "confidence_difference": 1.3113021850585938e-06
+        }
+      ]
+    },
+    {
+      "image": "Japan_000154.jpg",
+      "pytorch_detections": 3,
+      "exported_detections": 3,
+      "matches_at_iou_0_5": 3,
+      "matches": [
+        {
+          "class_id": 2,
+          "iou": 0.9999996425442415,
+          "confidence_difference": 1.0132789611816406e-06
+        },
+        {
+          "class_id": 0,
+          "iou": 0.9999981775097447,
+          "confidence_difference": 4.172325134277344e-07
+        },
+        {
+          "class_id": 1,
+          "iou": 0.9999989879062898,
+          "confidence_difference": 2.682209014892578e-07
+        }
+      ]
+    },
+    {
+      "image": "Japan_000215.jpg",
+      "pytorch_detections": 2,
+      "exported_detections": 2,
+      "matches_at_iou_0_5": 2,
+      "matches": [
+        {
+          "class_id": 1,
+          "iou": 0.9999997295613025,
+          "confidence_difference": 1.4901161193847656e-07
+        },
+        {
+          "class_id": 1,
+          "iou": 1.0,
+          "confidence_difference": 4.76837158203125e-07
+        }
+      ]
+    },
+    {
+      "image": "Norway_000160.jpg",
+      "pytorch_detections": 0,
+      "exported_detections": 0,
+      "matches_at_iou_0_5": 0,
+      "matches": []
+    },
+    {
+      "image": "Norway_000165.jpg",
+      "pytorch_detections": 0,
+      "exported_detections": 0,
+      "matches_at_iou_0_5": 0,
+      "matches": []
+    },
+    {
+      "image": "United_States_000025.jpg",
+      "pytorch_detections": 1,
+      "exported_detections": 1,
+      "matches_at_iou_0_5": 1,
+      "matches": [
+        {
+          "class_id": 0,
+          "iou": 0.9999969480969961,
+          "confidence_difference": 1.7881393432617188e-07
+        }
+      ]
+    },
+    {
+      "image": "United_States_000028.jpg",
+      "pytorch_detections": 1,
+      "exported_detections": 1,
+      "matches_at_iou_0_5": 1,
+      "matches": [
+        {
+          "class_id": 1,
+          "iou": 0.9999993842861198,
+          "confidence_difference": 2.086162567138672e-07
+        }
+      ]
+    },
+    {
+      "image": "United_States_000097.jpg",
+      "pytorch_detections": 4,
+      "exported_detections": 4,
+      "matches_at_iou_0_5": 4,
+      "matches": [
+        {
+          "class_id": 0,
+          "iou": 0.9999992608674656,
+          "confidence_difference": 1.7881393432617188e-07
+        },
+        {
+          "class_id": 1,
+          "iou": 0.9999996081145371,
+          "confidence_difference": 1.1920928955078125e-07
+        },
+        {
+          "class_id": 0,
+          "iou": 0.9999991739691237,
+          "confidence_difference": 3.2782554626464844e-07
+        },
+        {
+          "class_id": 0,
+          "iou": 1.0,
+          "confidence_difference": 1.1920928955078125e-06
+        }
+      ]
+    },
+    {
+      "image": "Czech_000006.jpg",
+      "pytorch_detections": 0,
+      "exported_detections": 0,
+      "matches_at_iou_0_5": 0,
+      "matches": []
+    },
+    {
+      "image": "Norway_000166.jpg",
+      "pytorch_detections": 0,
+      "exported_detections": 0,
+      "matches_at_iou_0_5": 0,
+      "matches": []
+    },
+    {
+      "image": "Norway_000187.jpg",
+      "pytorch_detections": 0,
+      "exported_detections": 0,
+      "matches_at_iou_0_5": 0,
+      "matches": []
+    },
+    {
+      "image": "United_States_000022.jpg",
+      "pytorch_detections": 3,
+      "exported_detections": 3,
+      "matches_at_iou_0_5": 3,
+      "matches": [
+        {
+          "class_id": 0,
+          "iou": 0.999999229672636,
+          "confidence_difference": 3.5762786865234375e-07
+        },
+        {
+          "class_id": 1,
+          "iou": 0.9999977841694375,
+          "confidence_difference": 5.960464477539063e-08
+        },
+        {
+          "class_id": 1,
+          "iou": 0.9999996639539913,
+          "confidence_difference": 1.1920928955078125e-07
+        }
+      ]
+    }
+  ]
+}

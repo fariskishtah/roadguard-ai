@@ -1,0 +1,12 @@
+{
+  "python": "3.13.16 (main, Oct  1 2026, 15:40:24) [GCC 13.3.0]",
+  "platform": "Linux-6.18.55+-x86_64-with-glibc2.39",
+  "torch": "2.11.0+cu130",
+  "ultralytics": "8.4.203",
+  "cuda": "13.0",
+  "gpu": "Tesla T4",
+  "seed": 42,
+  "image_size": 640,
+  "batch": 16,
+  "final_epochs": 20
+}

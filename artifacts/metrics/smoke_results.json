@@ -1,0 +1,17 @@
+[
+  {
+    "model": "yolov8n.pt",
+    "checkpoint": "/kaggle/working/roadguard/runs/smoke_yolov8n/weights/best.pt",
+    "duration_seconds": 47.36218625899983
+  },
+  {
+    "model": "yolo11n.pt",
+    "checkpoint": "/kaggle/working/roadguard/runs/smoke_yolo11n/weights/best.pt",
+    "duration_seconds": 22.640278290000197
+  },
+  {
+    "model": "yolo26n.pt",
+    "checkpoint": "/kaggle/working/roadguard/runs/smoke_yolo26n/weights/best.pt",
+    "duration_seconds": 20.44804990500006
+  }
+]
