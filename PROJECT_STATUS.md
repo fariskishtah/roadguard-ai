@@ -1,0 +1,46 @@
+# RoadGuard AI — Project Status
+
+Last updated: 2026-11-06 (Africa/Cairo)
+
+Status: **PARTIAL — implementation and real experiments in progress**
+
+## Completed
+
+- Independent Git repository created at `/Users/fariskishtah/project/roadguard-ai`.
+- Official RDD2022 source, taxonomy, country counts, Pascal VOC format, and absence of public challenge-test annotations verified.
+- Official country-specific downloads identified; raw data is Git-ignored.
+- Ultralytics support verified for three distinct families: YOLOv8, YOLO11, YOLO26.
+- AGPL-3.0 public-project licensing path selected; dataset attribution recorded as CC BY-SA 4.0.
+- Pascal VOC parsing, bounding-box validation/clipping, YOLO normalization, deterministic country-stratified splits, namespacing, model training, test evaluation, benchmarking, inference, rendering, exports, PDF reporting, and Gradio UI implemented.
+
+## Evidence and fixed configuration
+
+- Seed: `42`
+- Classes: `0 D00`, `1 D10`, `2 D20`, `3 D40`
+- Primary image size: `640`
+- Candidate checkpoints: `yolov8n.pt`, `yolo11n.pt`, `yolo26n.pt`
+- Primary selection metric: validation mAP@0.50:0.95
+- Frozen split manifest (after data preparation): `data/processed/rdd2022/split_manifest.json`
+- Dataset audit (after download): `artifacts/metrics/dataset_audit.json`
+- Training runs: `runs/train/`
+- Genuine metrics: `artifacts/metrics/`
+- Production checkpoint target: `models/roadguard-production.pt`
+
+## Running processes
+
+- Kaggle kernel: `fariskishtah/roadguard-ai-three-yolo-architectures`
+- URL: `https://www.kaggle.com/code/fariskishtah/roadguard-ai-three-yolo-architectures`
+- Version 1 status: `ERROR` — the attached dataset mount path differed from the dataset slug; no training ran.
+- Version 2 status: `ERROR` — confirmed Kaggle's new nested mount root is `/kaggle/input/datasets/...`; no training ran.
+- Version 3: recursive input discovery added before any training.
+
+## Not yet complete
+
+- Official subset download and measured audit.
+- Kaggle smoke run, three full training runs, controlled tuning, and held-out evaluation.
+- Real checkpoint integration tests and export parity.
+- Genuine error-analysis figures and application screenshots.
+- Security/license release audit, public GitHub/model/Space publication, and unauthenticated live verification.
+
+No metrics or completion claims are placeholders.
+
