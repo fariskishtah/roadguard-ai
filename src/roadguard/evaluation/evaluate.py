@@ -31,15 +31,16 @@ def evaluate_checkpoint(
     box = metrics.box
     per_class = []
     for class_id, code in enumerate(CLASS_CODES):
+        precision, recall, ap50, ap50_95 = box.class_result(class_id)
         per_class.append(
             {
                 "class_id": class_id,
                 "class_code": code,
                 "class_name": CLASS_NAMES[class_id],
-                "ap50": float(box.ap50[class_id]),
-                "ap50_95": float(box.ap[class_id]),
-                "precision": float(box.p[class_id]),
-                "recall": float(box.r[class_id]),
+                "ap50": float(ap50),
+                "ap50_95": float(ap50_95),
+                "precision": float(precision),
+                "recall": float(recall),
             }
         )
     payload = {

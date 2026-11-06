@@ -12,6 +12,11 @@ Status: **PARTIAL — implementation and real experiments in progress**
 - Ultralytics support verified for three distinct families: YOLOv8, YOLO11, YOLO26.
 - AGPL-3.0 public-project licensing path selected; dataset attribution recorded as CC BY-SA 4.0.
 - Pascal VOC parsing, bounding-box validation/clipping, YOLO normalization, deterministic country-stratified splits, namespacing, model training, test evaluation, benchmarking, inference, rendering, exports, PDF reporting, and Gradio UI implemented.
+- Public GitHub repository created: `https://github.com/fariskishtah/roadguard-ai`.
+- GitHub recognizes the repository as AGPL-3.0; unauthenticated HTTP verification returned 200.
+- GitHub Actions CI run `42136962256` passed installation, Ruff, and all tests.
+- Local test suite: 14 passed; no tests skipped.
+- Secret/token/private-key scan found no credential material; raw data and weights are Git-ignored.
 
 ## Evidence and fixed configuration
 
@@ -33,6 +38,9 @@ Status: **PARTIAL — implementation and real experiments in progress**
 - Version 1 status: `ERROR` — the attached dataset mount path differed from the dataset slug; no training ran.
 - Version 2 status: `ERROR` — confirmed Kaggle's new nested mount root is `/kaggle/input/datasets/...`; no training ran.
 - Version 3: recursive input discovery added before any training.
+- Version 4: metric parameter counting corrected to use the loaded YOLO model object.
+- Version 5: per-class metrics corrected to use Ultralytics `class_result()` API.
+- Version 5 is prepared locally but was not submitted yet because two GPU sessions are active; Kaggle rejected a third concurrent session.
 
 ## Not yet complete
 

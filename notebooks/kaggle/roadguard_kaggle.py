@@ -341,7 +341,7 @@ def train_once(
     return Path(result.save_dir) / "weights" / "best.pt", time.perf_counter() - started
 
 
-def compact_metrics(metrics, weights: Path, split: str) -> dict:
+def compact_metrics(metrics, weights: Path, split: str, parameters: int) -> dict:
     box = metrics.box
     return {
         "weights": str(weights),
@@ -355,21 +355,22 @@ def compact_metrics(metrics, weights: Path, split: str) -> dict:
                 "class_id": index,
                 "class_code": CLASS_CODES[index],
                 "class_name": CLASS_NAMES[index],
-                "precision": float(box.p[index]),
-                "recall": float(box.r[index]),
-                "ap50": float(box.ap50[index]),
-                "ap50_95": float(box.ap[index]),
+                "precision": float(box.class_result(index)[0]),
+                "recall": float(box.class_result(index)[1]),
+                "ap50": float(box.class_result(index)[2]),
+                "ap50_95": float(box.class_result(index)[3]),
             }
             for index in range(4)
         ],
         "speed_ms": {key: float(value) for key, value in metrics.speed.items()},
-        "parameters": sum(parameter.numel() for parameter in metrics.model.parameters()),
+        "parameters": parameters,
         "size_mb": weights.stat().st_size / (1024 * 1024),
     }
 
 
 def validate(weights: Path, data_yaml: Path, split: str, run_name: str) -> dict:
-    metrics = YOLO(str(weights)).val(
+    model = YOLO(str(weights))
+    metrics = model.val(
         data=str(data_yaml),
         split=split,
         imgsz=IMG_SIZE,
@@ -382,7 +383,8 @@ def validate(weights: Path, data_yaml: Path, split: str, run_name: str) -> dict:
         exist_ok=True,
         verbose=False,
     )
-    return compact_metrics(metrics, weights, split)
+    parameters = sum(parameter.numel() for parameter in model.model.parameters())
+    return compact_metrics(metrics, weights, split, parameters)
 
 
 def benchmark(weights: Path, image_paths: list[Path]) -> dict:
