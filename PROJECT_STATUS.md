@@ -15,8 +15,10 @@ Status: **PARTIAL — implementation and real experiments in progress**
 - Public GitHub repository created: `https://github.com/fariskishtah/roadguard-ai`.
 - GitHub recognizes the repository as AGPL-3.0; unauthenticated HTTP verification returned 200.
 - GitHub Actions CI run `42136962256` passed installation, Ruff, and all tests.
-- Local test suite: 14 passed; no tests skipped.
+- Local test suite: 15 passed; no tests skipped.
 - Secret/token/private-key scan found no credential material; raw data and weights are Git-ignored.
+- Hugging Face authentication verified for `fariskishtah`; no existing RoadGuard model/Space conflicts were found.
+- Hugging Face currently lists `cpu-basic` (2 vCPU, 16 GB RAM) as free; no paid hardware will be requested.
 
 ## Evidence and fixed configuration
 
